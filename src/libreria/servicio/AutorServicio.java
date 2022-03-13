@@ -1,4 +1,3 @@
-
 package libreria.servicio;
 
 import libreria.DAO.AutorDAO;
@@ -6,20 +5,14 @@ import libreria.entidades.Autor;
 
 public class AutorServicio {
 
-    private AutorDAO autorDao;//atributo
+    private AutorDAO autorDao;
 
     public AutorServicio() {
         this.autorDao = new AutorDAO();
     }
 
-    public Autor crearAutor(Autor autor) {
-        try {
-            autorDao.guardar(autor);
-            return autor;
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            return null;
-        }
+    public void crearAutor(Autor autor) {
+        autorDao.guardar(autor);
     }
 
     public void darBajaAutor(Long id) {
@@ -56,7 +49,7 @@ public class AutorServicio {
             return autorDao.buscarPorNombre(nombre);
 
         } catch ( Exception e) {
-            System.out.println(e.getMessage());
+            System.out.println("El autor no se ha encontrado");
             return null;
         }
     }

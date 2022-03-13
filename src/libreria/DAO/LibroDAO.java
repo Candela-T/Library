@@ -42,6 +42,7 @@ public class LibroDAO extends DAO<Libro> {
     public List<Libro> listarTodosPorAutor(String nombreAutor) throws Exception {
         conectar();
         List<Libro> autores = em.createQuery("SELECT l FROM Libro l WHERE l.autor.nombre = :nombreAutor")
+                .setParameter("nombreAutor", nombreAutor)
                 .getResultList();
         desconectar();
         return autores;
@@ -56,11 +57,11 @@ public class LibroDAO extends DAO<Libro> {
         return autores;
     }
 
-    public List<Libro> listarTodos() throws Exception {
-        conectar();
-        List<Libro> libros = em.createQuery("SELECT d FROM libro d")
-                .getResultList();
-        desconectar();
-        return libros;
-    }
+//    public List<Libro> listarTodos() throws Exception {
+//        conectar();
+//        List<Libro> libros = em.createQuery("SELECT d FROM libro d")
+//                .getResultList();
+//        desconectar();
+//        return libros;
+//    }
 }

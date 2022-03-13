@@ -1,4 +1,3 @@
-
 package libreria.servicio;
 
 
@@ -55,9 +54,9 @@ public class LibroServicio {
             return libroDao.buscarPorTitulo(nombre);
 
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.out.println("El titulo del libro no se ha encontrado");
             return null;
-            //return new ArrayList(); ES MEJOR PRACTICA************** eN LISTAS
+            
         }
     }
 
@@ -66,7 +65,7 @@ public class LibroServicio {
             return libroDao.listarTodosPorAutor(nombreAutor);
 
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.out.println("El nombre del autor no se ha encontrado");
             return null;
 
         }
@@ -76,21 +75,14 @@ public class LibroServicio {
         try {
             return libroDao.listarTodosPorEditorial(nombreEditorial);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.out.println("El nombre de la editorial no se encuentra en ningun libro");
             return null;
         }
 
     }
 
-    public Libro crearLibro(Libro libro) {
-        try {
-            libroDao.guardar(libro);
-            return libro;
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            return null;
-        }
-
+    public void crearLibro(Libro libro) {
+        libroDao.guardar(libro);
     }
 
     public void editarNombreLibro(Libro libro, String nombre) {
@@ -132,3 +124,4 @@ public class LibroServicio {
         }
     }
 }
+

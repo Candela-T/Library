@@ -37,12 +37,12 @@ public class EditorialDAO extends DAO<Editorial> {
         return editorial;
     }
 
-    public List<Editorial> listarTodos() throws Exception {
-        conectar();
-        List<Editorial> editoriales = em.createQuery("SELECT a FROM Editorial a")
-                .getResultList();
-        desconectar();
-        return editoriales;
-    }
-    
+//    public List<Editorial> listarTodos() throws Exception {
+//        conectar();
+//        List<Editorial> editoriales = em.createQuery("SELECT a FROM Editorial a")
+//                .getResultList();
+//        desconectar();
+//        return editoriales;
+//    }
+//    
 }

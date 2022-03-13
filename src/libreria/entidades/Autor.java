@@ -61,7 +61,7 @@ public class Autor implements Serializable {
     
     @Override
     public String toString() {
-        return "AUTOR -->  \n ID: " + id + " Nombre: " + nombre + " Alta: " + alta;
+        return "\nAUTOR -->  ID: " + id + " Nombre: " + nombre + " Alta: " + alta;
     }
     
     

@@ -149,11 +149,11 @@ public class Libro implements Serializable {
     
    @Override
     public String toString() {
-        return "LIBRO --> \n ISBN: " + isbn + " Titulo:" + titulo + " Anio: " + anio 
+        return "LIBRO --> \n ISBN: " + isbn + " Titulo: " + titulo + " Anio: " + anio 
                 + " Ejemplares: " + ejemplares + " Ejemplares prestados: " 
                 + ejemplaresPrestados + " Ejemplares restantes: " 
-                + ejemplaresRestantes + " Alta: " + alta + " Autor: " 
-                + autor + " Editorial: " + editorial;
+                + ejemplaresRestantes + " Alta: " + alta 
+                + autor + editorial;
     }
   
     

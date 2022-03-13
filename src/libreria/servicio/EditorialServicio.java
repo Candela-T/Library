@@ -1,4 +1,3 @@
-
 package libreria.servicio;
 
 import libreria.DAO.EditorialDAO;
@@ -6,9 +5,9 @@ import libreria.entidades.Editorial;
 
 public class EditorialServicio {
 
-    private EditorialDAO editorialDao;//atributo
+    private EditorialDAO editorialDao;
 
-    public EditorialServicio() {//constructor
+    public EditorialServicio() {
         this.editorialDao = new EditorialDAO();
     }
 
@@ -32,19 +31,13 @@ public class EditorialServicio {
         }
     }
 
-    public Editorial crearEditorial(Editorial editorial) {
-        try {
+    public void crearEditorial(Editorial editorial) {
             editorialDao.guardar(editorial);
-            return editorial;
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            return null;
-        }
+          
     }
 
     public void editarNombreEditorial(Long id, String nombre) throws Exception {
         try {
-
             Editorial editorial = editorialDao.buscarPorId(id);
             editorial.setNombre(nombre);
             editorialDao.editar(editorial);
@@ -62,4 +55,5 @@ public class EditorialServicio {
             return null;
         }
     }
+     
 }
